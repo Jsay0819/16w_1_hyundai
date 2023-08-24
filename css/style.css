@@ -32,7 +32,102 @@ body {
   overflow-x: hidden;
   min-width: 780px;
   height: 2000px;
-  background-color: rgb(198, 245, 245);
+}
+body {
+  /* 모달 떴을 때 뒤에 스크롤 되지 않도록 하려고 */
+  overflow-y: hidden;
+}
+body.active {
+  overflow-y: auto;
+}
+/* 안내창 */
+.modal-wrap {
+  font-family: "Noto Sans KR", Helvetica, "맑은 고딕", "malgun gothic",
+    "Apple SD Gothic Neo", sans-serif;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+}
+.modal-main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 400px;
+  border-radius: 20px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+.modal-notice {
+  padding: 50px 30px 23px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: -1.2px;
+}
+.modal-notice strong {
+  color: #e31a5a;
+  background: linear-gradient(to top, #ffe400 20%, transparent 30%);
+}
+.modal-notice span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 8px;
+  letter-spacing: -0.8px;
+}
+.modal-corrections {
+  width: 440px;
+  height: 135px;
+  font-size: 13px;
+  line-height: 20px;
+  overflow: auto;
+  background-color: #eee;
+  padding: 15px 20px;
+  margin: 0 auto;
+}
+.modal-corrections strong {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  line-height: 30px;
+}
+.corrections-number {
+  float: left;
+  width: 6%;
+}
+.corrections-txt {
+  float: right;
+  width: 94%;
+}
+.modal-close {
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 45px;
+  background-color: #f8ebe1;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+  border-radius: 0 0 19px 19px;
+  line-height: 45px;
+}
+.modal-close i {
+  margin-left: 3px;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
 }
 /* 공통요소 */
 .wrap {
@@ -45,16 +140,16 @@ body {
   min-width: 640px;
   padding: 0 90px;
   margin: 0 auto;
-  /* background-color: brown; */
+  /* background-color: antiquewhite; */
 }
 @media screen and (max-width: 1080px) {
   .inner {
     padding: 0 40px;
   }
-  @media screen and (max-width: 760px) {
-    .inner {
-      padding: 0 20px;
-    }
+}
+@media screen and (max-width: 760px) {
+  .inner {
+    padding: 0 20px;
   }
 }
 /* 주메뉴 */
@@ -235,7 +330,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   bottom: 7%;
-  /* swiper는 기본 z-index가 있으므로 */
+  /* swiper는 기본 z-index 가 있으므로 */
   z-index: 99;
 }
 .visual-control {
@@ -255,7 +350,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 0;
+  width: 100%;
   height: 3px;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -292,17 +387,18 @@ body {
   width: calc(50% - 4.32%);
   height: 51.58vw;
   max-width: 840px;
-  /* background-color: beige; */
 }
 .news-top {
   width: 100%;
   padding-top: 15%;
 }
+
 .news-log {
   font-family: Pretendard, "Nanum Myeongjo";
   font-size: 70px;
   font-weight: 600;
   letter-spacing: -2.5px;
+
   color: #000;
 }
 .news-desc {
@@ -341,7 +437,7 @@ body {
   height: auto;
 }
 .news-right {
-  width: calc(50% -4.32%);
+  width: calc(50% - 4.32%);
 }
 .news-link {
   position: relative;
@@ -349,7 +445,7 @@ body {
   width: 100%;
   height: 100%;
 }
-/* 이미지 반응형 적응 */
+/* 이미지 반응형 적용 */
 .news-link img {
   max-width: 100%;
   height: 51.85vw;
@@ -395,15 +491,15 @@ body {
     height: auto;
   }
 }
-/* 비지니스 */
+/* 비즈니스 */
 .business {
   position: relative;
   height: 52.08vw;
   max-height: 1000px;
   min-height: 676px;
-  background-color: rgb(255, 212, 212);
+  background-color: cornflowerblue;
 }
-/* swiper 레이아웃 세팅 */
+/* swiper 레이아웃 셋팅 */
 .swBusiness {
   width: 100%;
   height: 100%;
@@ -424,29 +520,20 @@ body {
   background: url("../images/business02.png") no-repeat center;
   background-size: cover;
 }
-
 .business-img-3 {
   background: url("../images/business03.png") no-repeat center;
   background-size: cover;
 }
-
 .business-img-4 {
   background: url("../images/business04.png") no-repeat center;
   background-size: cover;
 }
-
 .business-img-5 {
   background: url("../images/business05.png") no-repeat center;
   background-size: cover;
 }
-
 .business-img-6 {
   background: url("../images/business06.png") no-repeat center;
-  background-size: cover;
-}
-
-.business-img-7 {
-  background: url("../images/business07.png") no-repeat center;
   background-size: cover;
 }
 .swBusiness .inner {
@@ -489,6 +576,7 @@ body {
   font-weight: 300;
   letter-spacing: -0.18px;
   color: #e0e0e0;
+  opacity: 0;
   transform: translateY(100px);
 }
 .swBusiness .swiper-slide-active .business-txt p span {
@@ -504,15 +592,16 @@ body {
   font-size: 14px;
   font-weight: bold;
   letter-spacing: -0.14px;
-  opacity: 0;
   color: #fff;
+  opacity: 0;
   transform: translateY(100px);
 }
 .business-txt a::after {
   content: "";
   position: absolute;
-  right: 0px;
+  right: 0;
   top: -6px;
+  width: 36px;
   height: 25px;
   background: url("../images/more.png") no-repeat center;
 }
@@ -570,6 +659,7 @@ body {
   border-bottom: 1px solid #e2e2e2;
   padding: 35px 0;
 }
+
 .mcenter-category {
   font-size: 16px;
   font-weight: 300;
@@ -597,7 +687,7 @@ body {
   line-height: 1.71;
   letter-spacing: -0.35px;
   color: #808080;
-  /* 2줄 말줄임 */
+  /* 2줄말줄임 */
   display: -webkit-box;
   word-wrap: break-word;
   -webkit-line-clamp: 2;
@@ -622,7 +712,6 @@ body {
     text-align: center;
   }
   .mcenter-board {
-    /* background-color: antiquewhite; */
     padding-left: 0%;
   }
 }
@@ -636,11 +725,11 @@ body {
   display: flex;
   justify-content: flex-start;
   padding-bottom: 40px;
-  /* background-color: #dadada; */
 }
 .sitemap > ul:last-child {
   padding-bottom: 0;
 }
+
 .sitemap > ul > li {
   width: 20%;
 }
@@ -700,8 +789,8 @@ body {
 .footer-copy {
   display: block;
   margin-top: 10px;
-  font-weight: 400;
   font-size: 16px;
+  font-weight: 400;
   letter-spacing: -0.8px;
   color: #a2a2a2;
 }

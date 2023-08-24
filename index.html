@@ -2,14 +2,14 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stortcut icon"
       href="images/favicon_192.png"
       type="image/x-icon"
     />
-    <title>현대 그룹</title>
-
+    <title>현대그룹</title>
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -42,6 +42,11 @@
       content="https://www.hyundaigroup.com/upload/mainbanner/main02.png"
     />
     <meta property="og:url" content="https://www.hyundaigroup.com" />
+    <link
+      rel="stortcut icon"
+      href="images/favicon_192.png"
+      type="image/x-icon"
+    />
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
     <![endif]-->
@@ -55,8 +60,13 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- Anime.js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- AOS.js -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
@@ -71,10 +81,33 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
     <!-- 안내창 -->
+    <div class="modal-wrap">
+      <div class="modal-main">
+        <span class="modal-logo"> </span>
+        <p class="modal-notice">
+          해당 사이트는 <strong>스터디용</strong>으로 제작되었으며,<br />
+          리소스는 <strong>원저작자</strong>에게 있음을 알려드립니다.<br />
+          문제사항이 있을 시 연락주시면 빠른 시일 내 조치하겠습니다.<br />
+          <span>본 사이트는 Chrome 에 최적화되어 있습니다.</span>
+        </p>
+        <div class="modal-corrections">
+          <strong>아래 내용을 수정 및 보충하였습니다.</strong>
+          <ul class="clearfix">
+            <li class="corrections-number">1.</li>
+            <li class="corrections-txt">
+              Visual section 원사이트에는 없는 Swiper를 추가하였습니다.
+            </li>
+          </ul>
+        </div>
+        <div class="modal-close">확인했습니다. <i>(Click 하여 닫기)</i></div>
+      </div>
+    </div>
+
     <!-- 전체 레이아웃 -->
     <div class="wrap">
       <!-- 주메뉴 -->
